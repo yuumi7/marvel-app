@@ -1,20 +1,19 @@
-import { Component } from "react";
+import { useState, useEffect, useRef } from "react";
 import Spinner from "../spinner/Spinner";
 import ErrorMessage from "../errorMessage/ErrorMessage";
 import MarvelService from "../../services/MarvelService";
 import "./charList.scss";
 
-class CharList extends Component {
-  state = {
-    charList: [],
-    loading: true,
-    error: false,
-    newItemLoading: false,
-    offset: 0,
-    charEnded: false,
-  };
+const CharList = () => {
+ const [charList, setCharList] = useState([]);
+ const [loading, setLoading ] = useState(true);
+ const [error, setError] = useState(false);
+ const [newItemLoading, setNewItemLoading] = useState(false);
+ const [offset, setOffset] = useState(210);
+ const [charEnded, setCharEnded ] = useState(false);
+}
 
-  marvelService = new MarvelService();
+  const marvelService = new MarvelService();
 
   componentDidMount() {
     this.onRequest();
