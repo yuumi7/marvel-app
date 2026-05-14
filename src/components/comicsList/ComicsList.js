@@ -1,6 +1,9 @@
-import "./comicsList.scss";
-import uw from "../../resources/img/UW.png";
-import xMen from "../../resources/img/x-men.png";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
+import useMarvelService from "../../services/MarvelService";
+import Spinner from "../spinner/Spinner";
+import ErrorMessage from "../errorMessage/ErrorMessage";
 
 const ComicsList = () => {
   return (
@@ -64,11 +67,11 @@ const ComicsList = () => {
           </a>
         </li>
         <li className="comics__item">
-          <a href="#">
+          <Link to={`/comics/${item.id}`}>
             <img src={xMen} alt="x-men" className="comics__item-img" />
             <div className="comics__item-name">X-Men: Days of Future Past</div>
             <div className="comics__item-price">NOT AVAILABLE</div>
-          </a>
+          </Link>
         </li>
       </ul>
       <button className="button button__main button__long">

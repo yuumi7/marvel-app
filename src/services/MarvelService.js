@@ -29,7 +29,15 @@ const MarvelService = () => {
       comics: char.comics.items,
     };
   };
-  return { loading, error, clearError, getAllCharacters, getCharacter };
+  return {
+    loading,
+    error,
+    clearError,
+    getAllCharacters,
+    getCharacter,
+    getAllComics,
+    getComic,
+  };
 };
 
 export default useMarvelService;

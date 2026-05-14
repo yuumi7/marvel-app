@@ -1,4 +1,4 @@
-import { Component, useState } from "react";
+import { useEffect, useState } from "react";
 
 import useMarvelService from "../../services/MarvelService";
 import Spinner from "../spinner/Spinner";
